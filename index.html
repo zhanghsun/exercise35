@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Property Manipulation</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 600px; margin: auto; }
+        .box { background: #f4f4f4; border-left: 5px solid #333; padding: 15px; margin-bottom: 20px; }
+        code { background: #eee; padding: 2px 5px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+
+    <h2>Object Manipulation (Ref: image_664ed5.png)</h2>
+
+    <div class="box">
+        <strong>1. Initial Properties:</strong>
+        <p id="initial-props"></p>
+    </div>
+
+    <div class="box">
+        <strong>2. Deleting <code>age</code>...</strong>
+    </div>
+
+    <div class="box">
+        <strong>3. Final Object Structure:</strong>
+        <pre id="final-object"></pre>
+    </div>
+
+    <script>
+        var Person = {
+            firstName: "Tony",
+            lastName: "Lee",
+            age: 50,
+            eyeColor: "Blue"
+        };
+
+        // List properties
+        const props = Object.keys(Person).join(", ");
+        document.getElementById('initial-props').textContent = props;
+
+        // Delete property
+        delete Person.age;
+
+        // Show updated object
+        document.getElementById('final-object').textContent = JSON.stringify(Person, null, 4);
+    </script>
+</body>
+</html>
